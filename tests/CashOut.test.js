@@ -30,6 +30,21 @@ test("Gives the commission of 200 EURO on CASH OUT for juridical", () => {
   expect(CashOut(input)).toBe("0.90");
 });
 
+test("Gives the commission of 100 EURO on CASH OUT for juridical", () => {
+  const input = {
+    date: "2016-01-06",
+    user_id: 2,
+    user_type: "juridical",
+    type: "cash_out",
+    operation: {
+      amount: 100.0,
+      currency: "EUR",
+    },
+  };
+
+  expect(CashOut(input)).toBe("0.50");
+});
+
 test("Throws error if the currency is not in EUR", () => {
   const input = {
     date: "2016-01-06",

@@ -11,7 +11,7 @@ npm i
 ```
 
 ## How to use
-To use this program it would require a json file that contains an array of transaction objects
+To use this program it would require a json file that contains an array of transaction objects. For your convenience an input.json file is provided with an example.
 
 ```json
 { 

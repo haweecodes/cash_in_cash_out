@@ -1,4 +1,4 @@
-import { CommissionCalc, SupportedCurrency } from "../helper.js";
+import { CommissionCalc, SupportedCurrency, Rounding } from "../helper.js";
 
 const cashInFee = {
   percents: 0.03,
@@ -7,7 +7,6 @@ const cashInFee = {
     currency: "EUR",
   },
 };
-
 
 /**
  * CashIn() returns commission fee amount
@@ -24,9 +23,9 @@ const CashIn = (transaction) => {
   );
 
   if (commissionFee > cashInFee.max.amount)
-    return Number.parseFloat(cashInFee.max.amount).toFixed(2);
+    return Rounding(cashInFee.max.amount);
 
-  return Number.parseFloat(commissionFee).toFixed(2);
+  return Rounding(commissionFee);
 };
 
 export { CashIn };

@@ -12,7 +12,15 @@ export const CommissionCalc = (amount, percent) => {
 };
 
 /**
- * CheckOperationType() returns the a funtion depending on transaction type 
+ * Rounding() returns commission fee amount after rounding
+ * params are amount to be rounded
+ */
+export const Rounding = (amount) => {
+  return (Math.ceil(amount * 100) / 100).toFixed(2);
+};
+
+/**
+ * CheckOperationType() returns the a funtion depending on transaction type
  * param is type of transaction
  */
 export const CheckOperationType = (type) => {
